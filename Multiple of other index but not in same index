@@ -1,0 +1,33 @@
+import java.util.*;
+public class Sample
+{
+	public static void main(String args[])
+	{
+		      Scanner sc = new Scanner(System.in);
+		      String str = sc.nextLine();
+		      String arr[] = str.split(" ");
+		      int result[] = new int[arr.length];
+		      int ans[] = new int[arr.length]; 
+		      for(int i=0;i<arr.length;i++)
+		      {
+		          int num = Integer.parseInt(arr[i]);
+		          result[i] = num;
+		      }
+		      for(int i=0;i<result.length;i++)
+		      {
+		          int res = 1;
+		          for(int j=0;j<result.length;j++)
+		          {
+		              if(i!=j)
+		              {
+		                  res = res * result[j]; 
+		              }
+		          }
+		          ans[i] = res;
+		      }
+		      for(int i=0;i<ans.length;i++)
+		      {
+		          System.out.print(ans[i]+" ");
+		      }
+	}
+ }
