@@ -1,3 +1,5 @@
+import java.util.*;
+public class Surya{
 public static int subPalindrome(String s) {
 	    int n = s.length();
 	    int count = 0;
