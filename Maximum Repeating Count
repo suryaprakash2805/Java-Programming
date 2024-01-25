@@ -1,0 +1,28 @@
+import java.util.*;
+public class Sample
+{
+	public static void main(String args[])
+	{
+		      Scanner sc = new Scanner(System.in);
+		            String nums[] = sc.nextLine().split(" ");
+		            int count1 = 0;
+		            int maxCount = 0;
+		            for(int i=0;i<nums.length;i++)
+		            {
+		                int num1 = Integer.parseInt(nums[i]);
+		                int count2 = 0;
+		                for(int j=0;j<nums.length;j++){
+		                    int num2 = Integer.parseInt(nums[j]);
+		                        if(num1==num2)
+		                        {
+		                            count2++;
+		                        }
+		                }
+		                    if(count2>count1){
+		                        count1 = count2;
+		                        maxCount = num1;
+		                    }      
+		            }
+		            System.out.print(maxCount);
+	}
+}
