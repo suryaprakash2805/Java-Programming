@@ -1,0 +1,18 @@
+import java.util.*;
+public class Sample
+{
+	public static void main(String args[])
+	{
+		      Scanner sc = new Scanner(System.in);
+		            String str = sc.nextLine();
+		            int X = sc.nextInt();
+		            int Y = sc.nextInt();
+		            int len = str.length();
+		            if(str.charAt((X-1)%len) == str.charAt((Y-1)%len)) {
+		                System.out.print("YES");
+		            }
+		            else {
+		                System.out.print("NO");
+		            }
+	}
+}
