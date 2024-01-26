@@ -1,0 +1,23 @@
+import java.util.*;
+public class Sample
+{
+	public static void main(String args[])
+	{
+		      Scanner sc = new Scanner(System.in);
+		            int num = sc.nextInt();
+		            sc.nextLine();
+		            float highConsumed = 0;
+		            int efficient = 0;
+		            for(int i=1;i<=num;i++){
+		                String arr[] = sc.nextLine().split(" ");
+		                int fuel = Integer.parseInt(arr[0]);
+		                int dis = Integer.parseInt(arr[1]);
+		                float consumed = (float)dis/fuel; 
+		                if(consumed > highConsumed){
+		                    highConsumed = consumed ;
+		                    efficient = i;
+		                }
+		            }
+		            System.out.print(efficient);
+	}
+}
