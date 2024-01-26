@@ -1,0 +1,34 @@
+import java.util.*;
+public class Sample
+{
+	public static void main(String args[])
+	{
+		      Scanner sc = new Scanner(System.in);
+		           int num = sc.nextInt();
+		           float sum = 0;
+		           float arr[] = new float[num];
+		           for(int i=0;i<num;i++)
+		           {
+		              arr[i] = sc.nextInt(); 
+		           }
+		           for(int i=0;i<num;i++) 
+		           {
+		        	   if(arr[i]<=400) {
+		        		   sum += arr[i];
+		        	   }
+		           else if(arr[i]>400 && arr[i]<=500){
+		                   sum += arr[i] - (arr[i]*20)/100;
+		               }
+		              else if(arr[i]>500 && arr[i]<1000){
+		                   sum += arr[i] - (arr[i]*25)/100;
+		               }
+		               else {
+		                   sum += arr[i] - (arr[i]*50)/100;
+		               }
+		           }
+		           if(sum>2000){
+		               sum -= 100;
+		           }
+		           System.out.printf("%.2f",sum);
+	}
+}
