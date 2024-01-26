@@ -1,3 +1,3 @@
 #Java-Programming
 
-Some basic programs in java programming language. 
+Problems solving using java programming language. 
