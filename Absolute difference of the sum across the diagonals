@@ -1,0 +1,35 @@
+import java.util.*;
+public class Sample
+{
+	public static void main(String args[])
+	{
+		      Scanner sc = new Scanner(System.in);
+		      int size = sc.nextInt();
+		      int arr[][] = new int[size][size];
+		      int fir = 0;
+		      int sec = 0;
+		      for(int i=0;i<size;i++)
+		      {
+		          for(int j=0;j<size;j++)
+		          {
+		            arr[i][j] = sc.nextInt();
+		          }
+		      }
+		      for(int i=0;i<size;i++)
+		      {
+		          fir += arr[i][i];
+		      }
+		         for(int i=0;i<size;i++)
+		         {
+		            sec += arr[i][size-1-i];
+		         }
+		         if(fir<0) {
+		        	 fir = -1*fir;
+		         }
+		         if(sec<0) {
+		        	 sec = -1*sec;
+		         }
+		      int diff = Math.abs(fir-sec);
+		      System.out.print(diff);
+	}
+}
