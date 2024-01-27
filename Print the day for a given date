@@ -1,0 +1,30 @@
+import java.util.*;
+public class Sample
+{
+	public static void main(String args[])
+	{
+		      Scanner sc = new Scanner(System.in);
+		              String day = sc.nextLine();
+		              int date = sc.nextInt();
+		              String week[] = {"","MON","TUE","WED","THU","FRI","SAT","SUN"};
+		              int dayIndex = 0;
+		            for(int i=1;i<week.length;i++)
+		              {
+		               if(day.equals(week[i]))
+		               {
+		                  dayIndex = i;
+		                  break;
+		               }
+		              }
+		              int remainder = (date%7)-1;
+		              int index = dayIndex+remainder;
+		              if(index>7){
+		                       index = index%7;
+		                  System.out.print(week[index]);
+		              }
+		              else
+		              {
+		                  System.out.print(week[index]);
+		              } 
+	}
+}
