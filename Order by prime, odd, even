@@ -1,0 +1,50 @@
+import java.util.*;
+public class Sample
+{
+	public static void main(String args[])
+	{
+		      Scanner sc = new Scanner(System.in);
+		      String arr1[] = sc.nextLine().split(" ");
+		      int arr2[] = new int[arr1.length];
+		      for(int i=0;i<arr2.length;i++) {
+		    	  int num = Integer.parseInt(arr1[i]);
+		    	  arr2[i] = num;
+		      }
+		        Arrays.sort(arr2);
+		      String ans = "";
+		      for(int i=0;i<arr2.length;i++) {
+		           int num = arr2[i];
+		          boolean flag = true;
+		         for(int j=2;j<=Math.sqrt(num);j++) {
+		             if(num%j==0) {
+		                 flag = false;
+		             }
+		         }
+		         if(flag){
+		        	 String n = String.valueOf(num);
+		                ans = ans+n+" ";
+		         }
+		      }
+		      for(int i=0;i<arr2.length;i++) {
+			 int num = arr2[i];
+			 boolean flag = false;
+			 for(int j=2;j<=Math.sqrt(num);j++) {
+				if(num%j==0 && num!=2 && num%2!=0) {
+					flag = true;
+				}
+			 }
+			 if(flag) {
+			 String n = String.valueOf(num);
+		    		  ans = ans+n+" ";
+		    	  }
+		      }
+		      for(int i=0;i<arr2.length;i++) {
+		    	  int num = arr2[i];
+		    	  if(num!=2 && num%2==0) {
+		    		  String n = String.valueOf(num);
+		    		 ans = ans+n+" ";
+		    	  }
+		      }
+		      System.out.print(ans);
+	}
+}
