@@ -1,0 +1,25 @@
+import java.util.*;
+public class Sample {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+        int z = sc.nextInt();
+        int count = 0;
+        if((z>x&&z>y)||(z%2!=0&&x%2==0&&y%2==0)||(Math.abs(x-y)<z)) {
+        	System.out.print(-1);
+        }
+        else {
+        	    while(Math.abs(x-y)>=z)
+        	    {
+        	        count += 1;
+        	        x = Math.abs(x-y);
+        	        if(x==z)
+        	        {
+        	            break;
+        	        }
+        	    }
+        	    System.out.print(count*2);
+            }
+    }   	
+}
