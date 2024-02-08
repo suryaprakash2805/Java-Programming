@@ -1,0 +1,32 @@
+import java.util.*;
+public class Sample {
+  	public static void main(String[] args) 
+ 	{ 
+  		Scanner sc = new Scanner(System.in);
+  		String str = sc.nextLine().trim().toLowerCase();
+  		 String w1 = sc.nextLine().trim().toLowerCase();
+  		 String w2 = sc.nextLine().trim().toLowerCase();
+  		 String words[] = str.split(" ");
+  		 int minDistance = findMinDistance(words, w1, w2);
+  		 System.out.println(minDistance);
+  }
+  		private static int findMinDistance(String words[],String w1, String w2) {
+  		    int minDistance = Integer.MAX_VALUE;
+  		    int w1Index = -1;
+  		    int w2Index = -1;
+  		    for(int i=0;i<words.length;i++) {
+  		        if(words[i].equals(w1)){
+  		            w1Index = i;
+  		            if(w2Index != -1) {
+  		        minDistance =(w1.equals(w2))?1: Math.min(minDistance, Math.abs(w1Index - w2Index));
+  		            }
+  		        } else if(words[i].equals(w2)) {
+  		            w2Index = i;
+  		            if(w1Index != -1) {
+  		        minDistance = (w1.equals(w2))?1:Math.min(minDistance, Math.abs(w1Index - w2Index));
+  		            }
+  		        }
+  		    }
+  		return (minDistance == Integer.MAX_VALUE || minDistance ==1)? 1:minDistance;
+   }   	
+}
