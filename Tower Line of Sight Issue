@@ -1,0 +1,40 @@
+import java.util.*;
+public class Sample {
+  	public static void main(String[] args) 
+ 	{ 
+  		Scanner scanner = new Scanner(System.in);
+  	
+        int ax = scanner.nextInt();
+        int ay = scanner.nextInt();
+
+        int bx = scanner.nextInt();
+        int by = scanner.nextInt();
+
+        int cx = scanner.nextInt();
+        int cy = scanner.nextInt();
+
+        int dx = scanner.nextInt();
+        int dy = scanner.nextInt();
+
+        int flag1 = 0;
+        int flag2 = 0;
+
+        if ((((bx <= ax && by <= cx) || (bx >= cx && bx >= ax)) && ((by <= ay && by <= cy) || (by >= ay && by >= cy))) &&
+            (((dx <= ax && dx <= cx) || (dx >= cx && dx >= ax)) && ((dy <= ay && dy <= cy) || (dy >= ay && dy >= cy)))) {
+            flag1 = 1;
+        }
+
+        if ((((ax <= bx && ax <= dx) || (ax >= bx && ax >= dx)) && ((ay <= by && ay <= dy) || (ay >= by && ay >= dy))) &&
+            (((cx <= bx && cx <= dx) || (cx >= bx && cx >= dx)) && ((cy <= by && cy <= dy) || (cy >= by && cy >= dy)))) {
+            flag2 = 1;
+        }
+
+        if (flag1 == 1 && flag2 == 1) {
+            System.out.println("no");
+        } else {
+            System.out.println("yes");
+        }
+
+        scanner.close();
+    }
+}
