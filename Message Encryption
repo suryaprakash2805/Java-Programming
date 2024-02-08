@@ -1,0 +1,32 @@
+import java.util.*;
+public class Sample {
+  	public static void main(String[] args) 
+ 	{ 
+  		Scanner scanner = new Scanner(System.in);
+  		String s = scanner.next();
+        int len = scanner.nextInt();
+        int n = s.length() / len;
+        int k = 0;
+        char[][] st = new char[n][len];
+        for (int i = 0; i < n; i++) {
+            if (i % 2 == 0) {
+                for (int j = 0; j < len; j++) {
+                    st[i][j] = s.charAt(k);
+                    k++;
+                }
+            }
+            else {
+                for (int j = len - 1; j >= 0; j--) {
+                    st[i][j] = s.charAt(k);
+                    k++;
+                }
+            }
+        }
+
+        for (int i = 0; i < len; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(st[j][i]);
+            }
+        }
+    }
+}
